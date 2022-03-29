@@ -16,7 +16,7 @@ function connect(conn, PORT) {
         _qr = qr
     })
     
-    let server = app.listen(PORT, () => console.log('App listened on port', PORT))
+  let server = app.listen(PORT,'0.0.0.0', () => console.log('App listened on port', PORT,'0.0.0.0'))
     let io = SocketIO(server)
     io.on('connection', socket => {
         let { unpipeEmit } = pipeEmit(conn, socket, 'conn-')
